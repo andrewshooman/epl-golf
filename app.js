@@ -15,6 +15,7 @@ const TEAM_ALIASES = {
   "wolverhampton": "Wolves",
   "wolverhampton wanderers fc": "Wolves",
   "afc bournemouth": "Bournemouth",
+  brighton: "Brighton",
   "brighton and hove albion": "Brighton",
   "brighton and hove albion fc": "Brighton",
   "brighton & hove albion": "Brighton",
@@ -26,12 +27,39 @@ const TEAM_ALIASES = {
   "crystal palace": "Crystal Palace",
   "aston villa": "Aston Villa"
 };
+
+/** football-data.org TLAs → same labels as predictions.json (for shortName/tla quirks). */
+const TLA_TO_CANONICAL = {
+  ARS: "Arsenal",
+  AVL: "Aston Villa",
+  BOU: "Bournemouth",
+  BRE: "Brentford",
+  BHA: "Brighton",
+  BUR: "Burnley",
+  CHE: "Chelsea",
+  CRY: "Crystal Palace",
+  EVE: "Everton",
+  FUL: "Fulham",
+  LEE: "Leeds",
+  LIV: "Liverpool",
+  MCI: "Man City",
+  MUN: "Man U",
+  NEW: "Newcastle",
+  NFO: "Forest",
+  SUN: "Sunderland",
+  TOT: "Tottenham",
+  WHU: "West Ham",
+  WOL: "Wolves"
+};
 const DEFAULT_LOGO = "https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg";
 /** Same-origin proxy (see serve.py) — avoids CORS: api allows http://localhost but not :5500 */
 const FOOTBALL_DATA_PROXY = {
   "/competitions/PL/standings": "/api/pl/standings",
   "/competitions/PL/teams": "/api/pl/teams"
 };
+
+/** Last successful live standings + crest URLs (survives refresh if API briefly fails). */
+const STANDINGS_CACHE_KEY = "eplGolfStandingsV2";
 
 const refreshBtn = document.getElementById("refreshBtn");
 const premTableBody = document.querySelector("#premTable tbody");
@@ -42,8 +70,14 @@ const playerSummary = document.getElementById("playerSummary");
 const onlyDiffToggle = document.getElementById("onlyDiffToggle");
 const playerModal = document.getElementById("playerModal");
 const closeModalBtn = document.getElementById("closeModalBtn");
-const sourceLabel = document.getElementById("sourceLabel");
-const updatedLabel = document.getElementById("updatedLabel");
+function setSourceLabel(msg) {
+  const el = document.getElementById("sourceLabel");
+  if (el) el.textContent = msg;
+}
+function setUpdatedLabel(msg) {
+  const el = document.getElementById("updatedLabel");
+  if (el) el.textContent = msg;
+}
 
 let predictions = [];
 let standings = [];
@@ -51,16 +85,61 @@ let selectedPlayer = null;
 let logoByTeam = {};
 
 function normalizeTeamName(name) {
-  const clean = String(name || "")
+  const raw = String(name || "")
+    .normalize("NFKC")
     .replace(/\u00a0/g, " ")
+    .replace(/[\u200B-\u200D\uFEFF]/g, "")
     .trim();
-  if (!clean) return "";
-  return TEAM_ALIASES[clean.toLowerCase()] || clean;
+  if (!raw) return "";
+  const collapsed = raw.replace(/\s+/g, " ");
+  const lower = collapsed.toLowerCase();
+  if (TEAM_ALIASES[lower]) return TEAM_ALIASES[lower];
+  const relaxed = lower.replace(/\s*&\s*/g, " and ").replace(/\s+/g, " ").trim();
+  if (TEAM_ALIASES[relaxed]) return TEAM_ALIASES[relaxed];
+  const compact = collapsed.replace(/\s/g, "");
+  if (/^[A-Za-z]{3}$/.test(compact)) {
+    const canon = TLA_TO_CANONICAL[compact.toUpperCase()];
+    if (canon) return canon;
+  }
+  if (/brighton/i.test(collapsed) || /^bha$/i.test(compact)) return "Brighton";
+  return collapsed;
+}
+
+/** Case-insensitive key for Maps (predictions vs standings must match). */
+function teamLookupKey(name) {
+  return normalizeTeamName(name).toLowerCase();
+}
+
+function normalizeApiTeam(teamObj) {
+  if (!teamObj || typeof teamObj !== "object") return normalizeTeamName(teamObj);
+  /** Prefer full `name` first — shortName alone can miss aliases (e.g. Brighton variants). */
+  for (const key of ["name", "shortName", "tla"]) {
+    const v = teamObj[key];
+    if (v != null && String(v).trim()) {
+      const n = normalizeTeamName(v);
+      if (n) return n;
+    }
+  }
+  return "";
+}
+
+/** Resolve football-data standing row → display team (handles odd nesting / empty shortName). */
+function teamFromStandingRow(row) {
+  const t = row?.team ?? row?.club;
+  if (t && typeof t === "object") {
+    const n = normalizeApiTeam(t);
+    if (n) return n;
+    const fallback = normalizeTeamName(t.name || t.shortName || t.tla || "");
+    if (fallback) return fallback;
+  }
+  if (typeof t === "string" && t.trim()) return normalizeTeamName(t);
+  return "";
 }
 
 function logoUrlForTeam(team) {
   const normalized = normalizeTeamName(team);
-  return logoByTeam[normalized] || DEFAULT_LOGO;
+  const lk = teamLookupKey(team);
+  return logoByTeam[lk] || logoByTeam[normalized] || DEFAULT_LOGO;
 }
 
 function registerCrestForTeamLabels(teamObj) {
@@ -69,7 +148,10 @@ function registerCrestForTeamLabels(teamObj) {
   if (!crest) return;
   for (const raw of [teamObj.shortName, teamObj.name, teamObj.tla].filter(Boolean)) {
     const k = normalizeTeamName(raw);
-    if (k) logoByTeam[k] = crest;
+    if (k) {
+      logoByTeam[k] = crest;
+      logoByTeam[teamLookupKey(raw)] = crest;
+    }
   }
 }
 
@@ -127,14 +209,20 @@ function scoreForPick(distance, actualPos, bonusRule = "none") {
 }
 
 function buildLeaderboard(predRows, currentStandings) {
-  const actualPosByTeam = new Map(currentStandings.map((x) => [normalizeTeamName(x.team), Number(x.position)]));
+  const actualPosByTeam = new Map(
+    currentStandings.map((x, i) => {
+      const pos = Number(x.position);
+      const p = Number.isFinite(pos) && pos >= 1 ? pos : i + 1;
+      return [teamLookupKey(x.team), p];
+    })
+  );
   const perPlayer = new Map();
 
   for (const row of predRows) {
     const player = row.player;
     const team = normalizeTeamName(row.team);
     const predictedPos = Number(row.predictedPosition);
-    const actualPos = actualPosByTeam.get(team);
+    const actualPos = actualPosByTeam.get(teamLookupKey(row.team));
     if (!perPlayer.has(player)) perPlayer.set(player, { player, totalScore: 0, perfectPicks: 0, oneAway: 0 });
     if (!Number.isFinite(actualPos) || actualPos < 1 || Number.isNaN(predictedPos)) continue;
 
@@ -185,13 +273,19 @@ function renderPlayerDetail(player) {
   }
   playerDetailTitle.textContent = `${player} - Picks vs Standings`;
 
-  const actualPosByTeam = new Map(standings.map((x) => [normalizeTeamName(x.team), Number(x.position)]));
+  const actualPosByTeam = new Map(
+    standings.map((x, i) => {
+      const pos = Number(x.position);
+      const p = Number.isFinite(pos) && pos >= 1 ? pos : i + 1;
+      return [teamLookupKey(x.team), p];
+    })
+  );
   let rows = predictions
     .filter((x) => x.player === player)
     .map((x) => {
       const team = normalizeTeamName(x.team);
       const predicted = Number(x.predictedPosition);
-      const rawLive = actualPosByTeam.get(team);
+      const rawLive = actualPosByTeam.get(teamLookupKey(x.team));
       const live = Number(rawLive);
       const distance = Number.isFinite(live) ? Math.abs(predicted - live) : null;
       const score = distance === null ? null : scoreForPick(distance, live, x.bonusRule);
@@ -202,9 +296,10 @@ function renderPlayerDetail(player) {
   if (onlyDiffToggle.checked) rows = rows.filter((x) => (x.distance ?? 0) > 0);
 
   const total = rows.reduce((sum, x) => sum + (Number.isFinite(x.score) ? x.score : 0), 0);
-  const perfect = rows.filter((x) => x.distance === 0).length;
+  const holeInOne = rows.filter((x) => x.distance === 0).length;
+  const birdies = rows.filter((x) => x.distance === 1).length;
   const misses = rows.filter((x) => (x.distance ?? 0) > 0).length;
-  playerSummary.textContent = `Showing ${rows.length} picks | subtotal ${total} | perfect ${perfect} | mismatches ${misses}`;
+  playerSummary.textContent = `Showing ${rows.length} picks | subtotal ${total} | hole in one ${holeInOne} | birdies ${birdies} | mismatches ${misses}`;
 
   playerDetailBody.innerHTML = "";
   if (rows.length === 0) {
@@ -280,13 +375,97 @@ function renderStandingsEditor() {
   });
 }
 
-function recalcAndRender() {
+function recalcAndRender(updatedHint) {
   const leaderboard = buildLeaderboard(predictions, standings);
   if (!selectedPlayer && leaderboard.length) selectedPlayer = leaderboard[0].player;
   renderLeaderboard(leaderboard);
   renderPlayerDetail(selectedPlayer);
   renderStandingsEditor();
-  updatedLabel.textContent = `Last Updated: ${new Date().toLocaleString()}`;
+  setUpdatedLabel(updatedHint ?? `Last Updated: ${new Date().toLocaleString()}`);
+}
+
+function persistStandingsSnapshot() {
+  try {
+    const payload = {
+      fetchedAt: new Date().toISOString(),
+      standings,
+      logos: { ...logoByTeam }
+    };
+    localStorage.setItem(STANDINGS_CACHE_KEY, JSON.stringify(payload));
+  } catch {
+    /* quota or private mode */
+  }
+}
+
+function loadStandingsSnapshotFromStorage() {
+  try {
+    const raw = localStorage.getItem(STANDINGS_CACHE_KEY);
+    if (!raw) return null;
+    const o = JSON.parse(raw);
+    if (!Array.isArray(o.standings) || o.standings.length < 20) return null;
+    return o;
+  } catch {
+    return null;
+  }
+}
+
+function applyStandingsSnapshotFromStorage(o) {
+  standings = o.standings.map((x, i) => ({
+    team: normalizeTeamName(x.team),
+    position: i + 1,
+    played: x.played ?? null,
+    won: x.won ?? null,
+    draw: x.draw ?? null,
+    lost: x.lost ?? null,
+    gf: x.gf ?? null,
+    ga: x.ga ?? null,
+    gd: x.gd ?? null,
+    points: x.points ?? null
+  }));
+  if (o.logos && typeof o.logos === "object") {
+    for (const [k, v] of Object.entries(o.logos)) {
+      if (typeof v === "string" && v) logoByTeam[k] = v;
+    }
+  }
+  setSourceLabel(`Standings Source: Cached (${new Date(o.fetchedAt).toLocaleString()})`);
+}
+
+/** Fetches PL table + teams, fills `standings` and `logoByTeam`. Throws on failure. */
+async function fetchAndApplyLiveStandings() {
+  const [data, teamsData] = await Promise.all([
+    footballDataFetch("/competitions/PL/standings"),
+    footballDataFetch("/competitions/PL/teams")
+  ]);
+
+  const list = teamsData?.teams || [];
+  for (const t of list) {
+    registerCrestForTeamLabels(t);
+  }
+
+  const table = data?.standings?.find((s) => s.type === "TOTAL")?.table || [];
+  if (!Array.isArray(table) || table.length < 20) {
+    throw new Error("football-data.org returned incomplete table.");
+  }
+
+  standings = table.slice(0, 20).map((x, i) => {
+    const normalized =
+      teamFromStandingRow(x) || normalizeTeamName(x.team?.shortName || x.team?.name || "");
+    if (x.team && typeof x.team === "object") registerCrestForTeamLabels(x.team);
+    return {
+      team: normalized,
+      position: i + 1,
+      played: x.playedGames,
+      won: x.won,
+      draw: x.draw,
+      lost: x.lost,
+      gf: x.goalsFor,
+      ga: x.goalsAgainst,
+      gd: x.goalDifference,
+      points: x.points
+    };
+  });
+
+  setSourceLabel("Standings Source: football-data.org (standings + crests)");
 }
 
 async function loadPredictions() {
@@ -299,35 +478,11 @@ async function pullFromFootballDataOrg() {
   refreshBtn.disabled = true;
   refreshBtn.textContent = "Refreshing...";
   try {
-    const [data] = await Promise.all([
-      footballDataFetch("/competitions/PL/standings"),
-      hydrateLogosFromTeamsEndpoint().catch(() => null)
-    ]);
-
-    const table = data?.standings?.find((s) => s.type === "TOTAL")?.table || [];
-    if (!Array.isArray(table) || table.length < 20) throw new Error("football-data.org returned incomplete table.");
-
-    standings = table.slice(0, 20).map((x, i) => {
-      const normalized = normalizeTeamName(x.team?.shortName || x.team?.name);
-      registerCrestForTeamLabels(x.team);
-      return {
-        team: normalized,
-        position: i + 1,
-        played: x.playedGames,
-        won: x.won,
-        draw: x.draw,
-        lost: x.lost,
-        gf: x.goalsFor,
-        ga: x.goalsAgainst,
-        gd: x.goalDifference,
-        points: x.points
-      };
-    });
-
-    sourceLabel.textContent = "Standings Source: football-data.org (standings + crests)";
+    await fetchAndApplyLiveStandings();
+    persistStandingsSnapshot();
     recalcAndRender();
   } catch (err) {
-    sourceLabel.textContent = `Standings Source: football-data.org failed (${err.message || err})`;
+    setSourceLabel(`Standings Source: football-data.org failed (${err.message || err})`);
   } finally {
     refreshBtn.disabled = false;
     refreshBtn.textContent = "Refresh Standings";
@@ -338,14 +493,14 @@ async function loadInitialStandings() {
   const latestRes = await fetch("./data/latest-standings.json");
   if (latestRes.ok) {
     standings = await latestRes.json();
-    sourceLabel.textContent = "Standings Source: Provided latest snapshot";
+    setSourceLabel("Standings Source: Provided latest snapshot");
     return;
   }
 
   const fallbackRes = await fetch("./data/fallback-standings.json");
   if (!fallbackRes.ok) throw new Error("Could not load standings snapshot.");
   standings = await fallbackRes.json();
-  sourceLabel.textContent = "Standings Source: Workbook fallback snapshot";
+  setSourceLabel("Standings Source: Workbook fallback snapshot");
 }
 refreshBtn.addEventListener("click", pullFromFootballDataOrg);
 onlyDiffToggle.addEventListener("change", () => renderPlayerDetail(selectedPlayer));
@@ -354,6 +509,25 @@ closeModalBtn.addEventListener("click", () => playerModal.close());
 async function init() {
   try {
     await loadPredictions();
+
+    const syncedAt = () => `Last synced: ${new Date().toLocaleString()}`;
+
+    try {
+      await fetchAndApplyLiveStandings();
+      persistStandingsSnapshot();
+      recalcAndRender(syncedAt());
+      return;
+    } catch {
+      /* try cache, then bundled JSON */
+    }
+
+    const cached = loadStandingsSnapshotFromStorage();
+    if (cached) {
+      applyStandingsSnapshotFromStorage(cached);
+      recalcAndRender(`Last synced: ${new Date(cached.fetchedAt).toLocaleString()}`);
+      return;
+    }
+
     await loadInitialStandings();
     standings = standings.map((x, i) => ({
       team: normalizeTeamName(x.team),
@@ -367,11 +541,18 @@ async function init() {
       gd: x.gd ?? null,
       points: x.points ?? null
     }));
-    await hydrateLogosFromTeamsEndpoint().catch(() => null);
-    recalcAndRender();
+    try {
+      await fetchAndApplyLiveStandings();
+      persistStandingsSnapshot();
+      recalcAndRender(syncedAt());
+    } catch {
+      await hydrateLogosFromTeamsEndpoint().catch(() => null);
+      recalcAndRender();
+    }
   } catch (err) {
-    sourceLabel.textContent = "Standings Source: Could not initialize app";
-    updatedLabel.textContent = String(err.message || err);
+    setSourceLabel("Standings Source: Could not initialize app");
+    setUpdatedLabel(String(err.message || err));
+    console.error(err);
   }
 }
 
