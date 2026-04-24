@@ -1,0 +1,11 @@
+# Blueprint for https://render.com — connect this repo, add env var FOOTBALL_DATA_API_KEY.
+services:
+  - type: web
+    name: epl-prediction-standings
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: FOOTBALL_DATA_API_KEY
+        sync: false

@@ -1,0 +1,1682 @@
+[
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 1,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 2,
+    "team": "Tottenham",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 3,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 4,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 5,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 6,
+    "team": "Aston Villa",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 7,
+    "team": "Man U",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 8,
+    "team": "Newcastle",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 9,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 10,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 11,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 12,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 13,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 14,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 15,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 16,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 17,
+    "team": "Leeds",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 18,
+    "team": "Sunderland",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 19,
+    "team": "Brentford",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Ross Whipkey",
+    "predictedPosition": 20,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 1,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 2,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 3,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 4,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 5,
+    "team": "Aston Villa",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 6,
+    "team": "Tottenham",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 7,
+    "team": "Man U",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 8,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 9,
+    "team": "Newcastle",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 10,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 11,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 12,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 13,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 14,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 15,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 16,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 17,
+    "team": "Brentford",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 18,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 19,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Stephen Ryan",
+    "predictedPosition": 20,
+    "team": "Sunderland",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 1,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 2,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 3,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 4,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 5,
+    "team": "Newcastle",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 6,
+    "team": "Aston Villa",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 7,
+    "team": "Tottenham",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 8,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 9,
+    "team": "Man U",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 10,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 11,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 12,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 13,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 14,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 15,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 16,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 17,
+    "team": "Brentford",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 18,
+    "team": "Sunderland",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 19,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Becket Leinenweber",
+    "predictedPosition": 20,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 1,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 2,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 3,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 4,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 5,
+    "team": "Aston Villa",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 6,
+    "team": "Newcastle",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 7,
+    "team": "Bournemouth",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 8,
+    "team": "Tottenham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 9,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 10,
+    "team": "Man U",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 11,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 12,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 13,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 14,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 15,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 16,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 17,
+    "team": "Sunderland",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 18,
+    "team": "Brentford",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 19,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Daniel Gonzalez",
+    "predictedPosition": 20,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 1,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 2,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 3,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 4,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 5,
+    "team": "Newcastle",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 6,
+    "team": "Aston Villa",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 7,
+    "team": "Tottenham",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 8,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 9,
+    "team": "Man U",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 10,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 11,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 12,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 13,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 14,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 15,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 16,
+    "team": "Brentford",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 17,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 18,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 19,
+    "team": "Sunderland",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Calvin Ryan",
+    "predictedPosition": 20,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 1,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 2,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 3,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 4,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 5,
+    "team": "Man U",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 6,
+    "team": "Newcastle",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 7,
+    "team": "Aston Villa",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 8,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 9,
+    "team": "Tottenham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 10,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 11,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 12,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 13,
+    "team": "Brentford",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 14,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 15,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 16,
+    "team": "Burnley",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 17,
+    "team": "Sunderland",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 18,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 19,
+    "team": "Bournemouth",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Justin Holly",
+    "predictedPosition": 20,
+    "team": "Wolves",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 1,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 2,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 3,
+    "team": "Newcastle",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 4,
+    "team": "Tottenham",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 5,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 6,
+    "team": "Chelsea",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 7,
+    "team": "Aston Villa",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 8,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 9,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 10,
+    "team": "Man U",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 11,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 12,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 13,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 14,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 15,
+    "team": "Leeds",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 16,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 17,
+    "team": "Sunderland",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 18,
+    "team": "Brentford",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 19,
+    "team": "Wolves",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Jack Moore",
+    "predictedPosition": 20,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 1,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 2,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 3,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 4,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 5,
+    "team": "Newcastle",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 6,
+    "team": "Man U",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 7,
+    "team": "Bournemouth",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 8,
+    "team": "Aston Villa",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 9,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 10,
+    "team": "Tottenham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 11,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 12,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 13,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 14,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 15,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 16,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 17,
+    "team": "Sunderland",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 18,
+    "team": "Brentford",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 19,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "PJ Ryan",
+    "predictedPosition": 20,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 1,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 2,
+    "team": "Man U",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 3,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 4,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 5,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 6,
+    "team": "Forest",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 7,
+    "team": "Tottenham",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 8,
+    "team": "Newcastle",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 9,
+    "team": "Aston Villa",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 10,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 11,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 12,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 13,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 14,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 15,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 16,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 17,
+    "team": "Brentford",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 18,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 19,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Andrew Shooman",
+    "predictedPosition": 20,
+    "team": "Sunderland",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 1,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 2,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 3,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 4,
+    "team": "Man U",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 5,
+    "team": "Newcastle",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 6,
+    "team": "Chelsea",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 7,
+    "team": "Crystal Palace",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 8,
+    "team": "Tottenham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 9,
+    "team": "Aston Villa",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 10,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 11,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 12,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 13,
+    "team": "Burnley",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 14,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 15,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 16,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 17,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 18,
+    "team": "Brentford",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 19,
+    "team": "Sunderland",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Casey Shane",
+    "predictedPosition": 20,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 1,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 2,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 3,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 4,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 5,
+    "team": "Aston Villa",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 6,
+    "team": "Tottenham",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 7,
+    "team": "Newcastle",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 8,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 9,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 10,
+    "team": "Man U",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 11,
+    "team": "Forest",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 12,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 13,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 14,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 15,
+    "team": "Burnley",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 16,
+    "team": "West Ham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 17,
+    "team": "Brentford",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 18,
+    "team": "Wolves",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 19,
+    "team": "Sunderland",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Brendan Holly",
+    "predictedPosition": 20,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 1,
+    "team": "Man City",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 2,
+    "team": "Liverpool",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 3,
+    "team": "Arsenal",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 4,
+    "team": "Man U",
+    "bonusRule": "top5",
+    "manualAdjust": -1
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 5,
+    "team": "Chelsea",
+    "bonusRule": "top5",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 6,
+    "team": "Newcastle",
+    "bonusRule": "sixth",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 7,
+    "team": "Forest",
+    "bonusRule": "seventh",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 8,
+    "team": "Aston Villa",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 9,
+    "team": "Brighton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 10,
+    "team": "Tottenham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 11,
+    "team": "Crystal Palace",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 12,
+    "team": "Brentford",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 13,
+    "team": "Fulham",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 14,
+    "team": "Everton",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 15,
+    "team": "Bournemouth",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 16,
+    "team": "Sunderland",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 17,
+    "team": "Wolves",
+    "bonusRule": "none",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 18,
+    "team": "West Ham",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 19,
+    "team": "Leeds",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  },
+  {
+    "player": "Cullen Duval",
+    "predictedPosition": 20,
+    "team": "Burnley",
+    "bonusRule": "bottom3",
+    "manualAdjust": 0
+  }
+]

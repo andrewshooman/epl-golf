@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premier League prediction standings — table golf scoring vs live table." />
+  <title>EPL Prediction Standings</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="kicker">Premier League Predictions</p>
+        <h1>EPL Prediction Standings</h1>
+        <p class="subtitle">Lowest total wins (like golf). Each player ranks all 20 clubs; we compare your sheet to the live table.</p>
+      </div>
+      <div class="header-actions">
+        <button id="refreshBtn" class="btn">Refresh Standings</button>
+      </div>
+    </header>
+
+    <section class="card info-row">
+      <p class="pill"><strong>Scoring:</strong> Spot-on = −2; otherwise “how far off”; some rows get an extra −1 in a zone</p>
+      <p id="sourceLabel" class="pill">Standings Source: Loading...</p>
+      <p id="updatedLabel" class="pill">Last Updated: -</p>
+    </section>
+
+    <section class="boards-grid">
+      <div class="leaderboard-column">
+        <section class="card table-card leaderboard-card">
+          <h2>Leaderboard</h2>
+          <p class="zone-legend"><span class="swatch swatch-promo"></span> Top 3 &nbsp; <span class="swatch swatch-releg"></span> Bottom 3</p>
+          <table id="leaderboardTable" class="compact-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Score</th>
+                <th>Perfect</th>
+                <th>1 Away</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+
+        <section class="card scoring-card">
+          <h2>How scoring works</h2>
+          <div class="scoring-explainer">
+            <p><strong>Big picture:</strong> Everyone fills a 1–20 table (who wins, who goes down, etc.). We line that up with the <strong>real Premier League order</strong> whenever you hit refresh. <strong>Add up each club’s score — lowest total wins.</strong></p>
+            <p><strong>For each club on your sheet, we do two simple steps:</strong></p>
+            <ol class="scoring-steps">
+              <li><strong>Did you nail the exact place?</strong> Then that pick is <strong>−2</strong> (that’s a “thank you” for being spot on). If not, that pick starts as <strong>how many places you were wrong by</strong> — e.g. you said 4th and they’re 7th → that’s <strong>3</strong>.</li>
+              <li><strong>Does that row have an extra “zone” rule?</strong> (Same idea as certain rows in the workbook.) If yes, and the club <em>actually</em> lands in that zone, we take <strong>one more point off</strong> that pick (<strong>−1</strong> again). The only zones we use are:
+                <ul>
+                  <li><strong>Top five</strong> — they really finish <strong>1st through 5th</strong></li>
+                  <li><strong>Sixth only</strong> — they really finish <strong>6th</strong></li>
+                  <li><strong>Seventh only</strong> — they really finish <strong>7th</strong></li>
+                  <li><strong>Bottom three</strong> — they really finish <strong>18th, 19th, or 20th</strong></li>
+                </ul>
+                If your row doesn’t use one of those rules, we skip this step — only the number from step 1 counts.
+              </li>
+            </ol>
+            <p><strong>Your score for one club</strong> = step 1 + step 2 (when step 2 applies). <strong>Your name in the leaderboard</strong> = all 20 clubs added together.</p>
+            <p><strong>Extra columns:</strong> <em>Perfect</em> is how many clubs you got exactly right; <em>1 Away</em> is how many were only one place off — handy to brag with, but the leaderboard still uses the math above.</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="card table-card prem-panel">
+        <h2>Premier League Table</h2>
+        <p class="zone-legend"><span class="swatch swatch-promo"></span> Top 3 &nbsp; <span class="swatch swatch-releg"></span> Bottom 3 (relegation zone)</p>
+        <div class="prem-table-wrap">
+          <table id="premTable" class="compact-table">
+            <thead>
+              <tr>
+                <th>Pos</th>
+                <th>Team</th>
+                <th>P</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+                <th>Pts</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="playerModal" class="player-modal">
+    <div class="modal-head">
+      <h3 id="playerDetailTitle">Player Picks</h3>
+      <button id="closeModalBtn" class="btn btn-small btn-secondary">Close</button>
+    </div>
+    <p id="playerSummary" class="detail-summary">Player summary</p>
+    <label class="compact-toggle">
+      <input type="checkbox" id="onlyDiffToggle" />
+      Show only mismatches
+    </label>
+    <table id="playerDetailTable" class="compact-table">
+      <thead>
+        <tr>
+          <th>Pick</th>
+          <th>Team</th>
+          <th>P->A</th>
+          <th>D</th>
+          <th>S</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </dialog>
+
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
