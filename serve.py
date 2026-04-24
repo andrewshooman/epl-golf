@@ -39,6 +39,26 @@ class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
 
+    def end_headers(self) -> None:
+        path = self.path.split("?", 1)[0].lower()
+        if not path.startswith("/api/"):
+            if path in ("/", "/index.html") or path.endswith(".html"):
+                self.send_header("Cache-Control", "no-cache")
+            elif path.endswith((".css", ".js")):
+                self.send_header(
+                    "Cache-Control",
+                    "public, max-age=86400, stale-while-revalidate=604800",
+                )
+            elif "/data/" in path and path.endswith(".json"):
+                self.send_header(
+                    "Cache-Control",
+                    "public, max-age=120, stale-while-revalidate=300",
+                )
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+        self.send_header("X-Frame-Options", "SAMEORIGIN")
+        super().end_headers()
+
     def do_GET(self) -> None:
         path = self.path.split("?", 1)[0]
         if path == "/config.js":

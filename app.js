@@ -178,9 +178,12 @@ function createTeamLogoImg(teamName) {
   const img = document.createElement("img");
   img.className = "team-logo";
   img.alt = "";
+  img.width = 22;
+  img.height = 22;
   img.loading = "lazy";
   img.decoding = "async";
   img.referrerPolicy = "no-referrer";
+  if ("fetchPriority" in img) img.fetchPriority = "low";
   img.src = logoUrlForTeam(teamName);
   img.addEventListener("error", () => {
     img.src = DEFAULT_LOGO;
@@ -267,6 +270,8 @@ function renderLeaderboard(rows) {
     if (n >= 3 && row.rank > n - 3) tr.classList.add("table-row-releg");
     tr.classList.add("clickable-row");
     if (row.player === selectedPlayer) tr.classList.add("selected");
+    tr.tabIndex = 0;
+    tr.setAttribute("aria-label", `Open picks for ${row.player}`);
     tr.innerHTML = `
       <td><span class="rank-badge">${row.rank}</span></td>
       <td>${row.player}</td>
@@ -278,6 +283,12 @@ function renderLeaderboard(rows) {
       selectedPlayer = row.player;
       renderPlayerDetail(selectedPlayer);
       if (typeof playerModal.showModal === "function") playerModal.showModal();
+    });
+    tr.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        tr.click();
+      }
     });
     leaderboardBody.appendChild(tr);
   }

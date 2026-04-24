@@ -4,12 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Premier League prediction standings — table golf scoring vs live table." />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EPL Golf" />
+  <meta property="og:description" content="Premier League table golf — live table, picks vs standings, and leaderboard scoring." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="EPL Golf" />
+  <meta name="twitter:description" content="Premier League table golf — live table, picks vs standings, and leaderboard scoring." />
   <title>EPL Golf</title>
   <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" type="image/svg+xml" />
+  <link rel="dns-prefetch" href="https://upload.wikimedia.org" />
+  <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" />
 </head>
 <body>
-  <main class="container">
+  <a class="skip-link" href="#main-boards">Skip to content</a>
+  <main class="container" id="top">
     <header class="hero">
       <div>
         <p class="kicker">Premier League Predictions</p>
@@ -17,11 +32,11 @@
         <p class="subtitle">Lowest total wins (like golf). Each player ranks all 20 clubs; we compare your sheet to the live table.</p>
       </div>
       <div class="header-actions">
-        <button id="refreshBtn" class="btn">Refresh Standings</button>
+        <button type="button" id="refreshBtn" class="btn" aria-label="Refresh standings from live Premier League data">Refresh Standings</button>
       </div>
     </header>
 
-    <section class="boards-grid">
+    <section class="boards-grid" id="main-boards" aria-label="Leaderboard and league table">
       <div class="leaderboard-column">
         <section class="card table-card leaderboard-card">
           <h2>Leaderboard</h2>
@@ -29,11 +44,11 @@
           <table id="leaderboardTable" class="compact-table">
             <thead>
               <tr>
-                <th>Rank</th>
-                <th>Player</th>
-                <th>Score</th>
-                <th>Hole in one</th>
-                <th>Birdies</th>
+                <th scope="col">Rank</th>
+                <th scope="col">Player</th>
+                <th scope="col">Score</th>
+                <th scope="col">Hole in one</th>
+                <th scope="col">Birdies</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -70,16 +85,16 @@
           <table id="premTable" class="compact-table">
             <thead>
               <tr>
-                <th>Pos</th>
-                <th>Team</th>
-                <th>P</th>
-                <th>W</th>
-                <th>D</th>
-                <th>L</th>
-                <th>GF</th>
-                <th>GA</th>
-                <th>GD</th>
-                <th>Pts</th>
+                <th scope="col">Pos</th>
+                <th scope="col">Team</th>
+                <th scope="col">P</th>
+                <th scope="col">W</th>
+                <th scope="col">D</th>
+                <th scope="col">L</th>
+                <th scope="col">GF</th>
+                <th scope="col">GA</th>
+                <th scope="col">GD</th>
+                <th scope="col">Pts</th>
               </tr>
             </thead>
             <tbody></tbody>
@@ -89,10 +104,10 @@
     </section>
   </main>
 
-  <dialog id="playerModal" class="player-modal">
+  <dialog id="playerModal" class="player-modal" aria-labelledby="playerDetailTitle">
     <div class="modal-head">
       <h3 id="playerDetailTitle">Player Picks</h3>
-      <button id="closeModalBtn" class="btn btn-small btn-secondary">Close</button>
+      <button type="button" id="closeModalBtn" class="btn btn-small btn-secondary">Close</button>
     </div>
     <p id="playerSummary" class="detail-summary">Player summary</p>
     <label class="compact-toggle">
@@ -102,11 +117,11 @@
     <table id="playerDetailTable" class="compact-table">
       <thead>
         <tr>
-          <th>Pick</th>
-          <th>Team</th>
-          <th>P->A</th>
-          <th>Distance</th>
-          <th>Strokes</th>
+          <th scope="col">Pick</th>
+          <th scope="col">Team</th>
+          <th scope="col">P->A</th>
+          <th scope="col">Distance</th>
+          <th scope="col">Strokes</th>
         </tr>
       </thead>
       <tbody></tbody>
