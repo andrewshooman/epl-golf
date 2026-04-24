@@ -59,7 +59,7 @@ const FOOTBALL_DATA_PROXY = {
 };
 
 /** Last successful live standings + crest URLs (survives refresh if API briefly fails). */
-const STANDINGS_CACHE_KEY = "eplGolfStandingsV2";
+const STANDINGS_CACHE_KEY = "eplGolfStandingsV3";
 
 const refreshBtn = document.getElementById("refreshBtn");
 const premTableBody = document.querySelector("#premTable tbody");
@@ -84,6 +84,24 @@ let standings = [];
 let selectedPlayer = null;
 let logoByTeam = {};
 
+/** Strip trailing "FC" / "AFC" etc. so API full names (e.g. "Liverpool FC") match workbook labels ("Liverpool"). */
+function stripEnglishClubSuffixes(s) {
+  let t = String(s || "").trim();
+  for (let i = 0; i < 4; i++) {
+    const next = t
+      .replace(/\s+football club\s*$/i, "")
+      .replace(/\s+club\s*$/i, "")
+      .replace(/\s+fc\s*$/i, "")
+      .replace(/\s+afc\s*$/i, "")
+      .replace(/\s+cf\s*$/i, "")
+      .replace(/\s+sc\s*$/i, "")
+      .trim();
+    if (next === t) break;
+    t = next;
+  }
+  return t;
+}
+
 function normalizeTeamName(name) {
   const raw = String(name || "")
     .normalize("NFKC")
@@ -91,7 +109,8 @@ function normalizeTeamName(name) {
     .replace(/[\u200B-\u200D\uFEFF]/g, "")
     .trim();
   if (!raw) return "";
-  const collapsed = raw.replace(/\s+/g, " ");
+  let collapsed = raw.replace(/\s+/g, " ");
+  collapsed = stripEnglishClubSuffixes(collapsed);
   const lower = collapsed.toLowerCase();
   if (TEAM_ALIASES[lower]) return TEAM_ALIASES[lower];
   const relaxed = lower.replace(/\s*&\s*/g, " and ").replace(/\s+/g, " ").trim();
@@ -112,8 +131,8 @@ function teamLookupKey(name) {
 
 function normalizeApiTeam(teamObj) {
   if (!teamObj || typeof teamObj !== "object") return normalizeTeamName(teamObj);
-  /** Prefer full `name` first — shortName alone can miss aliases (e.g. Brighton variants). */
-  for (const key of ["name", "shortName", "tla"]) {
+  /** Prefer `shortName` first — matches prediction.json labels; `name` is often "Liverpool FC" etc. */
+  for (const key of ["shortName", "name", "tla"]) {
     const v = teamObj[key];
     if (v != null && String(v).trim()) {
       const n = normalizeTeamName(v);
